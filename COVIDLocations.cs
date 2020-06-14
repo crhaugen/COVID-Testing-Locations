@@ -22,13 +22,13 @@ namespace COVIDLocationTracker
                 if (response.IsSuccessStatusCode)
                 {
                     string result = response.Content.ReadAsStringAsync().Result;
-                    var location = JsonConvert.DeserializeObject<List<Location>>(result);
-                    //LocationObject locations = JsonConvert.DeserializeObject<LocationObject>(result);
-
-
+                    Debug.WriteLine(result);
+                    //var location = JsonConvert.DeserializeObject<List<Location>>(result);
+                    var location = JsonConvert.DeserializeObject<List<LocationInfo>>(result);
+                    
                     for (int i = 0; i < location.Count(); i++)
                     {
-                        Debug.WriteLine(location[i].Property1.Length);
+                        Debug.WriteLine(location[i].name);
                     }
 
 
