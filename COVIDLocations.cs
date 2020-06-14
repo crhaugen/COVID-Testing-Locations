@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
 using System.Web;
 using Newtonsoft.Json;
 
@@ -10,14 +12,43 @@ namespace COVIDLocationTracker
 {
     public class COVIDLocations
     {
+        public string getLocation()
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://covid-19-testing.github.io/locations/");
+                HttpResponseMessage response = client.GetAsync("arizona/complete.json").Result;
 
+                if (response.IsSuccessStatusCode)
+                {
+                    string result = response.Content.ReadAsStringAsync().Result;
+                    var location = JsonConvert.DeserializeObject<List<Location>>(result);
+                    //LocationObject locations = JsonConvert.DeserializeObject<LocationObject>(result);
+
+
+                    for (int i = 0; i < location.Count(); i++)
+                    {
+                        Debug.WriteLine(location[i].Property1.Length);
+                    }
+
+
+
+                }
+                else
+                {
+                    Debug.WriteLine("Unsuccessful request, Status Code: " + response.StatusCode);
+                }
+            }
+            return " ";
+        }
     }
 
-    public class LocationObject
+
+    public class Location
     {
-        public LocationInfo[] LocationsInfo { get; set; }
+        public LocationInfo[] Property1 { get; set; }
     }
-  
+
     public class LocationInfo
     {
         public string id { get; set; }
@@ -64,4 +95,5 @@ namespace COVIDLocationTracker
         public string opens_at { get; set; }
         public string closes_at { get; set; }
     }
+
 }
