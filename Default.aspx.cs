@@ -27,7 +27,7 @@ namespace COVIDLocationTracker
                 Output.Text = "Invalid zip code. Please try again.";
             }
 
-            
+            string state = StateSelect.SelectedValue;
 
         }
 
@@ -35,12 +35,17 @@ namespace COVIDLocationTracker
         {
             COVIDLocations locations = new COVIDLocations();
             Zipcode zipcode = new Zipcode();
-
+            Dictionary<int, LocationInfo> locationDistance = new Dictionary<int, LocationInfo>();
             var locationsList = locations.getLocations(state);
 
             //for every location in state
             //find distance from given zip
             //sort based on nearest distance
+        }
+
+        protected void StateSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
