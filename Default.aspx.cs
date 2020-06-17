@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -28,7 +29,7 @@ namespace COVIDLocationTracker
             }
 
             string state = StateSelect.SelectedValue;
-
+            getLocations(state, zip);
         }
 
         protected void getLocations(string state, string userZipCode)
@@ -41,11 +42,24 @@ namespace COVIDLocationTracker
             //for every location in state
             //find distance from given zip
             //sort based on nearest distance
+            for(int i = 0; i < locationsList.Count; i++)
+            {
+                int distance = zipcode.getDistance(userZipCode, locationsList[i].physical_address[0].postal_code);
+                locationDistance.Add(distance, locationsList[i]);
+
+            }
+
+            var list = locationDistance.Keys.ToList();
+            list.Sort();
+
+            foreach (var key in list)
+            {
+                Debug.WriteLine(locationDistance[key]);
+            }
+
+
         }
 
-        protected void StateSelect_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+    
     }
 }
