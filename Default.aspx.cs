@@ -29,10 +29,12 @@ namespace COVIDLocationTracker
             }
 
             string state = StateSelect.SelectedValue;
-            getLocations(state, zip);
+           
+
+            Output.Text = getLocations(state, zip);
         }
 
-        protected void getLocations(string state, string userZipCode)
+        protected string getLocations(string state, string userZipCode)
         {
             COVIDLocations locations = new COVIDLocations();
             Zipcode zipcode = new Zipcode();
@@ -58,7 +60,23 @@ namespace COVIDLocationTracker
                 Debug.WriteLine(pair.Key);
             }
 
+            return displayInformation(locationDistance);
 
+        }
+
+        protected string displayInformation(List<KeyValuePair<int, LocationInfo>> locationDistance)
+        {
+            string output = "<br><br>";
+
+            foreach (var pair in locationDistance)
+            {
+                string name = "Name: " + pair.Value.name;
+                string description = "Information: " + pair.Value.description;
+                output += name + "<br>" + description + "<br><br>";
+            }
+
+
+            return output;
         }
 
     
