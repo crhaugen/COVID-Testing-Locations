@@ -5,18 +5,18 @@
     <div class="jumbotron">
         <p>&nbsp;<asp:DropDownList ID="StateSelect" runat="server">
             <asp:ListItem Value="0">State</asp:ListItem>
-            <asp:ListItem Value="01">arizona</asp:ListItem>
-            <asp:ListItem Value="02">california</asp:ListItem>
-            <asp:ListItem Value="03">delaware</asp:ListItem>
-            <asp:ListItem Value="04">florida</asp:ListItem>
-            <asp:ListItem Value="05">massachusetts</asp:ListItem>
-            <asp:ListItem Value="06">nevada</asp:ListItem>
-            <asp:ListItem Value="07">new-jersey</asp:ListItem>
-            <asp:ListItem Value="08">new-york</asp:ListItem>
-            <asp:ListItem Value="09">pennsylvania</asp:ListItem>
-            <asp:ListItem Value="10">texas</asp:ListItem>
-            <asp:ListItem Value="11">utah</asp:ListItem>
-            <asp:ListItem Value="12">washington</asp:ListItem>
+            <asp:ListItem Value="arizona">arizona</asp:ListItem>
+            <asp:ListItem Value="california">california</asp:ListItem>
+            <asp:ListItem Value="delaware">delaware</asp:ListItem>
+            <asp:ListItem Value="florida">florida</asp:ListItem>
+            <asp:ListItem Value="massachusetts">massachusetts</asp:ListItem>
+            <asp:ListItem Value="nevada">nevada</asp:ListItem>
+            <asp:ListItem Value="new-jersey<">new-jersey</asp:ListItem>
+            <asp:ListItem Value="new-york">new-york</asp:ListItem>
+            <asp:ListItem Value="pennsylvania">pennsylvania</asp:ListItem>
+            <asp:ListItem Value="texas">texas</asp:ListItem>
+            <asp:ListItem Value="utah">utah</asp:ListItem>
+            <asp:ListItem Value="washington">washington</asp:ListItem>
             </asp:DropDownList>
             <asp:TextBox ID="ZipCode" runat="server" placeholder="Zip Code"></asp:TextBox>
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
