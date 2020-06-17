@@ -36,7 +36,8 @@ namespace COVIDLocationTracker
         {
             COVIDLocations locations = new COVIDLocations();
             Zipcode zipcode = new Zipcode();
-            Dictionary<int, LocationInfo> locationDistance = new Dictionary<int, LocationInfo>();
+            //Dictionary<int, LocationInfo> locationDistance = new Dictionary<int, LocationInfo>();
+            List<KeyValuePair<int, LocationInfo>> locationDistance = new List<KeyValuePair<int, LocationInfo>>();
             var locationsList = locations.getLocations(state);
 
             //for every location in state
@@ -45,16 +46,16 @@ namespace COVIDLocationTracker
             for(int i = 0; i < locationsList.Count; i++)
             {
                 int distance = zipcode.getDistance(userZipCode, locationsList[i].physical_address[0].postal_code);
-                locationDistance.Add(distance, locationsList[i]);
+                KeyValuePair<int, LocationInfo> item = new KeyValuePair<int, LocationInfo>(distance, locationsList[i]);
+                locationDistance.Add(item);
 
             }
 
-            var list = locationDistance.Keys.ToList();
-            list.Sort();
+            locationDistance.Sort((k, v) => (k.Key.CompareTo(v.Key)));
 
-            foreach (var key in list)
+            foreach (var pair in locationDistance)
             {
-                Debug.WriteLine(locationDistance[key]);
+                Debug.WriteLine(pair.Key);
             }
 
 
