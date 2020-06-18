@@ -26,9 +26,15 @@ namespace COVIDLocationTracker
             catch (Exception)
             {
                 Output.Text = "Invalid zip code. Please try again.";
+                return;
             }
 
             string state = StateSelect.SelectedValue;
+
+            if(state.Length == 0)
+            {
+                Output.Text = "Please select state and try again";
+            }
            
 
             Output.Text = getLocations(state, zip);
@@ -38,7 +44,7 @@ namespace COVIDLocationTracker
         {
             COVIDLocations locations = new COVIDLocations();
             Zipcode zipcode = new Zipcode();
-            //Dictionary<int, LocationInfo> locationDistance = new Dictionary<int, LocationInfo>();
+           
             List<KeyValuePair<int, LocationInfo>> locationDistance = new List<KeyValuePair<int, LocationInfo>>();
             var locationsList = locations.getLocations(state);
 
@@ -70,10 +76,12 @@ namespace COVIDLocationTracker
 
             foreach (var pair in locationDistance)
             {
-                string name = "Name: " + pair.Value.name;
-                string description = "Information: " + pair.Value.description;
-                string distance = "Distance from your location: " + pair.Key + " miles";
-                output += name + "<br>" + description + "<br>" + distance + "<br><br>";
+                string name = "<b>Name:</b> " + pair.Value.name;
+                string description = "<b>Information:</b> " + pair.Value.description;
+                string distance = "<b>Distance from your location:</b> " + pair.Key + " miles";
+                string phone = "<b>Phone Number:</b> " + pair.Value.phones[0].number;
+                string address = "<b>Address:</b> " + pair.Value.physical_address[0].address_1 + " " + pair.Value.physical_address[0].city;
+                output += name + "<br>" + description + "<br><br>" + phone + "<br>" + address + "<br>" + distance + "<br><br><br>";
             }
 
 

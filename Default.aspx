@@ -43,6 +43,7 @@
                 COVID-19 Testing Locations Finder.
                 <br />
                 <br />
+
                 Enter state and zip code to find COVID-19 testing locations nearest to you.
                 <br />
                 
@@ -52,18 +53,18 @@
         <div class="form">
                 <asp:DropDownList ID="StateSelect" runat="server">
             <asp:ListItem Value="0">State</asp:ListItem>
-            <asp:ListItem Value="arizona">arizona</asp:ListItem>
-            <asp:ListItem Value="california">california</asp:ListItem>
-            <asp:ListItem Value="delaware">delaware</asp:ListItem>
-            <asp:ListItem Value="florida">florida</asp:ListItem>
-            <asp:ListItem Value="massachusetts">massachusetts</asp:ListItem>
-            <asp:ListItem Value="nevada">nevada</asp:ListItem>
-            <asp:ListItem Value="new-jersey<">new-jersey</asp:ListItem>
-            <asp:ListItem Value="new-york">new-york</asp:ListItem>
-            <asp:ListItem Value="pennsylvania">pennsylvania</asp:ListItem>
-            <asp:ListItem Value="texas">texas</asp:ListItem>
-            <asp:ListItem Value="utah">utah</asp:ListItem>
-            <asp:ListItem Value="washington">washington</asp:ListItem>
+            <asp:ListItem Value="arizona">Arizona</asp:ListItem>
+            <asp:ListItem Value="california">California</asp:ListItem>
+            <asp:ListItem Value="delaware">Delaware</asp:ListItem>
+            <asp:ListItem Value="florida">Florida</asp:ListItem>
+            <asp:ListItem Value="massachusetts">Massachusetts</asp:ListItem>
+            <asp:ListItem Value="nevada">Nevada</asp:ListItem>
+            <asp:ListItem Value="new-jersey<">New Jersey</asp:ListItem>
+            <asp:ListItem Value="new-york">New York</asp:ListItem>
+            <asp:ListItem Value="pennsylvania">Pennsylvania</asp:ListItem>
+            <asp:ListItem Value="texas">Texas</asp:ListItem>
+            <asp:ListItem Value="utah">Utah</asp:ListItem>
+            <asp:ListItem Value="washington">Washington</asp:ListItem>
             </asp:DropDownList>
             <br />
      
