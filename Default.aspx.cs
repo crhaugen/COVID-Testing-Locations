@@ -78,7 +78,18 @@ namespace COVIDLocationTracker
             {
                 string name = "<b>Name:</b> " + pair.Value.name;
                 string description = "<b>Information:</b> " + pair.Value.description;
-                string distance = "<b>Distance from your location:</b> " + pair.Key + " miles";
+                string distance = "";
+
+
+                if (pair.Key == 0)
+                {
+                    distance = "<b>Distance from your location:</b> Sorry distance is unavailable right now.";
+                }
+                else
+                {
+                    distance = "<b>Distance from your location:</b> " + pair.Key + " miles";
+                }
+
                 string phone = "<b>Phone Number:</b> " + pair.Value.phones[0].number;
                 string address = "<b>Address:</b> " + pair.Value.physical_address[0].address_1 + " " + pair.Value.physical_address[0].city;
                 output += name + "<br>" + description + "<br><br>" + phone + "<br>" + address + "<br>" + distance + "<br><br><br>";
