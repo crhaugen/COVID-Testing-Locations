@@ -1,7 +1,9 @@
 # COVID-19 Testing Locations Finder.
 Website to help people find nearest COVID-19 testing locations in the U.S. Simply select a state and enter your zip code to see testing locations near you.
 
-This prototype site is for the Girls in Tech 2020 Hackathon. [Link to Hackathon](https://girls-in-tech-hackathon.devpost.com/)
+**Link to website:** [Find Testing Locations](http://find-covid-testing-locations.azurewebsites.net/)
+
+**This prototype site is for the Girls in Tech 2020 Hackathon.** [Link to Hackathon](https://girls-in-tech-hackathon.devpost.com/)
 
 
 
