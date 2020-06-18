@@ -40,9 +40,8 @@ namespace COVIDLocationTracker
                 {
                     //todo: print out status if hour limt of request was used
                     Debug.WriteLine("Unsuccessful request, Status Code: " + response.StatusCode);
+                    return 0;
                 }
-
-                return 0;
             }
 
 

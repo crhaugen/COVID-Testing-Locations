@@ -72,7 +72,8 @@ namespace COVIDLocationTracker
             {
                 string name = "Name: " + pair.Value.name;
                 string description = "Information: " + pair.Value.description;
-                output += name + "<br>" + description + "<br><br>";
+                string distance = "Distance from your location: " + pair.Key + " miles";
+                output += name + "<br>" + description + "<br>" + distance + "<br><br>";
             }
 
 
