@@ -58,7 +58,7 @@ textarea {
         width: 100%;
         border: 0;
         margin: 15px 15px 15px;
-        padding: 15px;
+        padding: 5px;
         box-sizing: border-box;
         font-size: 14px;
     }
@@ -79,7 +79,7 @@ textarea {
     }
 
         .form button:hover, .form button:active, .form button:focus {
-            background: #43A047;
+            background: #4394a0;
         }
 
     .form .message {
@@ -138,11 +138,11 @@ textarea {
             }
 
 body {
-    background: #76b852; /* fallback for old browsers */
-    background: -webkit-linear-gradient(right, #76b852, #8DC26F);
-    background: -moz-linear-gradient(right, #76b852, #8DC26F);
-    background: -o-linear-gradient(right, #76b852, #8DC26F);
-    background: linear-gradient(to left, #76b852, #8DC26F);
+    background: #52a7b8; /* fallback for old browsers */
+    background: -webkit-linear-gradient(right, #52a7b8, #528eb8);
+    background: -moz-linear-gradient(right, #52a7b8, #528eb8);
+    background: -o-linear-gradient(right, #52a7b8, #528eb8);
+    background: linear-gradient(to left, #52a7b8, #528eb8);
     font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
